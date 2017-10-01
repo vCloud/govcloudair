@@ -217,11 +217,13 @@ func (e *EdgeGateway) getFirstUplink() types.Reference {
 		}
 		uplink = *gi.Network
 	}
+
 	return uplink
 }
 
 func (e *EdgeGateway) AddNATPortMappingWithUplink(network *types.OrgVDCNetwork, nattype, externalIP, externalPort string, internalIP, internalPort string) (Task, error) {
 	// if a network is provided take it, otherwise find first uplink on the edgegateway
+
 	var uplinkRef string
 
 	if network != nil {
