@@ -4,7 +4,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/ukcloud/govcloudair/testutil"
+	"github.com/kradalby/govcloudair/testutil"
 	. "gopkg.in/check.v1"
 )
 
