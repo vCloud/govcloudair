@@ -17,8 +17,8 @@ func (s *K) Test_FindVMByHREF(c *C) {
 		"/api/vApp/vm-11111111-1111-1111-1111-111111111111": testutil.Response{200, nil, vmExample},
 	})
 
-	vm_href := vcdu_api.String() + "/vApp/vm-11111111-1111-1111-1111-111111111111"
-	vm, err := s.client.FindVMByHREF(vm_href)
+	vmHref := vcdu_api.String() + "/vApp/vm-11111111-1111-1111-1111-111111111111"
+	vm, err := s.vdc.GetVMByHREF(vmHref)
 	_ = testServer.WaitRequest()
 	testServer.Flush()
 

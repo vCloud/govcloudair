@@ -125,7 +125,7 @@ func (v *Vdc) FindStorageProfileReference(name string) (types.Reference, error) 
 func (v *Vdc) GetDefaultStorageProfileReference() (types.Reference, error) {
 
 	// storageprofiles *types.QueryResultRecordsType
-	query := fmt.Sprintf("%s?type=orgVdcStorageProfile&type=records&filter=(vdcName==%s)", v.c.VCDVDCHREF, v.Vdc.Name)
+	query := fmt.Sprintf("%v?type=orgVdcStorageProfile&type=records&filter=(vdcName==%s)", v.c.VCDVDCHREF, v.Vdc.Name)
 
 	u, err := url.ParseRequestURI(query)
 
