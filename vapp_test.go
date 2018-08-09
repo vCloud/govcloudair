@@ -625,20 +625,18 @@ var vappExample = `
 	      <Link href="http://localhost:4444/api/admin/network/e68434e9-a9ae-47d8-b809-743e70307085/action/reset" rel="repair"/>
 	      <Description>This isolated network was created with Create VDC.</Description>
 	      <Configuration>
-	        <IpScopes>
-	          <IpScope>
-	            <IsInherited>true</IsInherited>
-	            <Gateway>192.168.99.1</Gateway>
-	            <Netmask>255.255.255.0</Netmask>
-	            <IsEnabled>true</IsEnabled>
-	            <IpRanges>
-	              <IpRange>
-	                <StartAddress>192.168.99.2</StartAddress>
-	                <EndAddress>192.168.99.100</EndAddress>
-	              </IpRange>
-	            </IpRanges>
-	          </IpScope>
-	        </IpScopes>
+	        <IpScope>
+	          <IsInherited>true</IsInherited>
+	          <Gateway>192.168.99.1</Gateway>
+	          <Netmask>255.255.255.0</Netmask>
+	          <IsEnabled>true</IsEnabled>
+	          <IpRanges>
+	            <IpRange>
+	              <StartAddress>192.168.99.2</StartAddress>
+	              <EndAddress>192.168.99.100</EndAddress>
+	            </IpRange>
+	          </IpRanges>
+	        </IpScope>
 	        <ParentNetwork href="http://localhost:4444/api/admin/network/8d0cbfe2-25b3-4a1f-b608-5ffeabc7a53d" id="8d0cbfe2-25b3-4a1f-b608-5ffeabc7a53d" name="M916272752-5793-default-isolated"/>
 	        <FenceMode>bridged</FenceMode>
 	        <RetainNetInfoAcrossDeployments>false</RetainNetInfoAcrossDeployments>
@@ -648,14 +646,12 @@ var vappExample = `
 	    <NetworkConfig networkName="none">
 	      <Description>This is a special place-holder used for disconnected network interfaces.</Description>
 	      <Configuration>
-	        <IpScopes>
-	          <IpScope>
-	            <IsInherited>false</IsInherited>
-	            <Gateway>196.254.254.254</Gateway>
-	            <Netmask>255.255.0.0</Netmask>
-	            <Dns1>196.254.254.254</Dns1>
-	          </IpScope>
-	        </IpScopes>
+	        <IpScope>
+	          <IsInherited>false</IsInherited>
+	          <Gateway>196.254.254.254</Gateway>
+	          <Netmask>255.255.0.0</Netmask>
+	          <Dns1>196.254.254.254</Dns1>
+	        </IpScope>
 	        <FenceMode>isolated</FenceMode>
 	      </Configuration>
 	      <IsDeployed>false</IsDeployed>

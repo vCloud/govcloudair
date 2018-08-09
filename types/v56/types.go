@@ -252,15 +252,6 @@ type SubAllocation struct {
 	IPRanges    *IPRanges  `xml:"IpRanges,omitempty"`    // IP range sub allocated to the edge gateway.
 }
 
-// IPScopes represents a list of IP scopes.
-// Type: IpScopesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
-// Description: Represents a list of IP scopes.
-// Since: 5.1
-type IPScopes struct {
-	IPScope IPScope `xml:"IpScope"` // IP scope.
-}
-
 // NetworkConfiguration the configuration applied to a network. This is an abstract base type. The concrete types include thos for vApp and Organization wide networks.
 // Type: NetworkConfigurationType
 // Namespace: http://www.vmware.com/vcloud/v1.5
@@ -268,7 +259,7 @@ type IPScopes struct {
 // Since: 0.9
 type NetworkConfiguration struct {
 	BackwardCompatibilityMode      bool                  `xml:"BackwardCompatibilityMode"`
-	IPScopes                       *IPScopes             `xml:"IpScopes,omitempty"`
+	IPScope                        *IPScope              `xml:"IpScope,omitempty"`
 	ParentNetwork                  *Reference            `xml:"ParentNetwork,omitempty"`
 	FenceMode                      FenceMode             `xml:"FenceMode"`
 	RetainNetInfoAcrossDeployments bool                  `xml:"RetainNetInfoAcrossDeployments"`
