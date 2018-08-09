@@ -738,9 +738,9 @@ type UndeployVAppParams struct {
 type VMCapabilities struct {
 	HREF                string   `xml:"href,attr,omitempty"`
 	Type                string   `xml:"type,attr,omitempty"`
-	CPUHotAddEnabled    bool     `xml:"CpuHotAddEnabled,omitempty"`
 	Link                LinkList `xml:"Link,omitempty"`
 	MemoryHotAddEnabled bool     `xml:"MemoryHotAddEnabled,omitempty"`
+	CPUHotAddEnabled    bool     `xml:"CpuHotAddEnabled,omitempty"`
 }
 
 // VMs represents a list of virtual machines.
