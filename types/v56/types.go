@@ -252,15 +252,6 @@ type SubAllocation struct {
 	IPRanges    *IPRanges  `xml:"IpRanges,omitempty"`    // IP range sub allocated to the edge gateway.
 }
 
-// IPScopes represents a list of IP scopes.
-// Type: IpScopesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
-// Description: Represents a list of IP scopes.
-// Since: 5.1
-type IPScopes struct {
-	IPScope IPScope `xml:"IpScope"` // IP scope.
-}
-
 // NetworkConfiguration the configuration applied to a network. This is an abstract base type. The concrete types include thos for vApp and Organization wide networks.
 // Type: NetworkConfigurationType
 // Namespace: http://www.vmware.com/vcloud/v1.5
@@ -268,7 +259,7 @@ type IPScopes struct {
 // Since: 0.9
 type NetworkConfiguration struct {
 	BackwardCompatibilityMode      bool                  `xml:"BackwardCompatibilityMode"`
-	IPScopes                       *IPScopes             `xml:"IpScopes,omitempty"`
+	IPScope                        *IPScope              `xml:"IpScope,omitempty"`
 	ParentNetwork                  *Reference            `xml:"ParentNetwork,omitempty"`
 	FenceMode                      FenceMode             `xml:"FenceMode"`
 	RetainNetInfoAcrossDeployments bool                  `xml:"RetainNetInfoAcrossDeployments"`
@@ -738,9 +729,9 @@ type UndeployVAppParams struct {
 type VMCapabilities struct {
 	HREF                string   `xml:"href,attr,omitempty"`
 	Type                string   `xml:"type,attr,omitempty"`
-	CPUHotAddEnabled    bool     `xml:"CpuHotAddEnabled,omitempty"`
 	Link                LinkList `xml:"Link,omitempty"`
 	MemoryHotAddEnabled bool     `xml:"MemoryHotAddEnabled,omitempty"`
+	CPUHotAddEnabled    bool     `xml:"CpuHotAddEnabled,omitempty"`
 }
 
 // VMs represents a list of virtual machines.
@@ -1735,8 +1726,8 @@ type QueryResultEdgeGatewayRecordsType struct {
 	PageSize int     `xml:"pageSize,attr,omitempty"` // Page size, as a number of records or references.
 	Total    float64 `xml:"total,attr,omitempty"`    // Total number of records or references in the container.
 	// Elements
-	Link              LinkList                          `xml:"Link,omitempty"`    // A reference to an entity or operation associated with this object.
-	EdgeGatewayRecord *QueryResultEdgeGatewayRecordType `xml:"EdgeGatewayRecord"` // A record representing a query result.
+	Link              []*Link                             `xml:"Link,omitempty"`    // A reference to an entity or operation associated with this object.
+	EdgeGatewayRecord []*QueryResultEdgeGatewayRecordType `xml:"EdgeGatewayRecord"` // A record representing a EdgeGateway result.
 }
 
 type QueryResultRecordsType struct {
@@ -1749,7 +1740,7 @@ type QueryResultRecordsType struct {
 	Total    float64 `xml:"total,attr,omitempty"`    // Total number of records or references in the container.
 	// Elements
 	Link                       []*Link                                      `xml:"Link,omitempty"`             // A reference to an entity or operation associated with this object.
-	EdgeGatewayRecord          *QueryResultEdgeGatewayRecordType            `xml:"EdgeGatewayRecord"`          // A record representing a query result.
+	EdgeGatewayRecord          []*QueryResultEdgeGatewayRecordType          `xml:"EdgeGatewayRecord"`          // A record representing a EdgeGateway result.
 	VMRecord                   []*QueryResultVMRecordType                   `xml:"VMRecord"`                   // A record representing a VM result.
 	VAppRecord                 []*QueryResultVAppRecordType                 `xml:"VAppRecord"`                 // A record representing a VApp result.
 	OrgVdcStorageProfileRecord []*QueryResultOrgVdcStorageProfileRecordType `xml:"OrgVdcStorageProfileRecord"` // A record representing storage profiles

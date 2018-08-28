@@ -118,17 +118,6 @@ func (s *S) Test_FindVApp(c *C) {
 
 	c.Assert(err, IsNil)
 
-	testServer.ResponseMap(2, testutil.ResponseMap{
-		"/api/vdc/00000000-0000-0000-0000-000000000000":       testutil.Response{200, nil, vdcExample},
-		"/api/vApp/vapp-00000000-0000-0000-0000-000000000000": testutil.Response{200, nil, vappExample},
-	})
-
-	_, err = s.vdc.FindVAppByID("urn:vcloud:vapp:00000000-0000-0000-0000-000000000000")
-
-	_ = testServer.WaitRequests(2)
-
-	c.Assert(err, IsNil)
-
 }
 
 var vdcExample = `
