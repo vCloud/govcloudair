@@ -5,7 +5,7 @@
 package govcloudair
 
 import (
-	"github.com/kradalby/govcloudair/testutil"
+	"github.com/vCloud/govcloudair/testutil"
 
 	. "gopkg.in/check.v1"
 	"strconv"

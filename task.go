@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"time"
 
-	types "github.com/kradalby/govcloudair/types/v56"
+	types "github.com/vCloud/govcloudair/types/v56"
 )
 
 type Task struct {

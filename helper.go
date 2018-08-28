@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"net/url"
 
-	types "github.com/kradalby/govcloudair/types/v56"
+	types "github.com/vCloud/govcloudair/types/v56"
 )
 
 func GetVersionHeader(version types.ApiVersionType) (key, value string) {
